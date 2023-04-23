@@ -2,6 +2,9 @@
 	<view class="navBar">
 		<slot name="default"></slot>
 	</view>
+	<view class="navBarPlaceholder">
+		<slot></slot>
+	</view>
 </template>
 
 <script lang="ts" setup>
@@ -33,7 +36,7 @@
 </script>
 
 <style lang="scss" scoped>
-	.navBar{
+	.navBar,.navBarPlaceholder{
 		background-color: v-bind(backgroundColor);
 		color: v-bind(textColor);
 		$paddingTempTop: v-bind(paddingTop);
@@ -42,9 +45,20 @@
 		padding-right: v-bind(paddingRight);
 		padding-bottom: v-bind(paddingBottom);
 		padding-left: v-bind(paddingLeft);
-		height: v-bind(navBarHeight);
+		min-height: v-bind(navBarHeight);
+	}
+	.navBar{
 		display: flex;
+		position: fixed;
+		top: 0px;
+		left: 0px;
+		width: 100%;
 		justify-content: flex-start;
 		align-items: center;
+	}
+	.navBarPlaceholder{
+		opacity: 0;
+		display: block;
+		pointer-events:none;
 	}
 </style>

@@ -1,6 +1,6 @@
 <template>
 	<navBar paddingLeft="20px">
-		 <div>JOJO佐希照明</div>
+		 <div>我的</div>
 	</navBar>
 </template>
 

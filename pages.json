@@ -4,12 +4,50 @@
 			"path": "pages/index/index",
 			"style": {
 			}
+		},
+		{
+			"path": "pages/classify/classify",
+			"style": {
+			}
+		},
+		{
+			"path": "pages/shoppingCart/shoppingCart",
+			"style": {
+			}
+		},
+		{
+			"path": "pages/my/my",
+			"style": {
+			}
 		}
 	],
 	"globalStyle": {
 		"navigationStyle": "custom",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"borderStyle": "black",
+		"color": "#6c6c6c",
+		"selectedColor": "#000000",
+		"list": [
+			{
+				"pagePath": "pages/index/index",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/classify/classify",
+				"text": "分类"
+			},
+			{
+				"pagePath": "pages/shoppingCart/shoppingCart",
+				"text": "购物车"
+			},
+			{
+				"pagePath": "pages/my/my",
+				"text": "我的"
+			}
+		]
 	},
 	"uniIdRouter": {}
 }

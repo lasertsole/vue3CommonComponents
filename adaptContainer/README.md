@@ -1,0 +1,40 @@
+<h3>adaptContainer.vue</h3>
+<div>说明:用于使盒子组始终居中，并且盒子换行时在行内居左对齐</div>
+<h4>adaptContainer API</h4>
+<table>
+    <tr>
+        <th>属性名</th>
+        <th>说明</th>
+        <th>类型</th>
+        <th>默认值</th>
+    </tr>
+    <tr>
+        <td>boxNum</td>
+        <td>盒子数量</td>
+        <td>number</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>boxWidth</td>
+        <td>盒子宽度</td>
+        <td>number</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>boxHeight</td>
+        <td>盒子高度</td>
+        <td>number</td>
+        <td>-</td>
+    </tr>
+</table>
+<h4>navBar slot</h4>
+<table>
+    <tr>
+        <th>插槽名</th>
+        <th>说明</th>
+    </tr>
+    <tr>
+        <td>[index]</td>
+        <td>使用从1依次递增1的插槽名，规定每个slot放入一个盒子</td>
+    </tr>
+</table>

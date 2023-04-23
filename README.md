@@ -1,2 +1,1 @@
-# jojoWechatMinProgram
-jojo灯饰微信小程序 uniapp+vue3+ts+scss
+vue3通用组件

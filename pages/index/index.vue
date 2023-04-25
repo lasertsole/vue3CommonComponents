@@ -1,33 +1,29 @@
 <template>
-	<navBar
-		paddingLeft="20px"
-		backgroundColor="white"
-	>
-		<template #default>
+	<bodyer>
+		<template #navBar>
 			<div>JOJO佐希照明</div>
 		</template>
-	</navBar>
-	<div class="searchBar">
-		<div class="navigation"></div>
-		<div class="search"></div>
-	</div>
+		<template #default>
+			<searchBar></searchBar>
+		</template>
+	</bodyer>
 </template>
 
-
 <script lang="ts" setup>
-	import { onPullDownRefresh } from "@dcloudio/uni-app";
-	import navBar from "@/components/common/navBar.vue"
+	import bodyer from "@/components/common/bodyer.vue"
 	import useGlobal from "@/api/global"
-	const global = useGlobal();
-	//console.log(global);
-	onPullDownRefresh(()=>{
-		console.log('refresh');
-		setTimeout(function () {
-			uni.stopPullDownRefresh();
-		}, 3000);
-	})
+	import searchBar from "@/components/index/searchBar.vue"
+	const global:object|undefined = useGlobal();
+
+	function searchEvent(searchContent:string):void{
+		console.log(searchContent);
+	}
 </script>
 
 <style lang="scss" scoped>
-	
+	@import "@/uni.scss";
+	.companyCard{
+		@include fixedRetangle(100%, 100px);
+		background-color: aqua;
+	}
 </style>

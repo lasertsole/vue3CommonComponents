@@ -14,4 +14,10 @@
 
 <style lang="scss">
 	/*每个页面公共css */
+	@import "@/uni.scss";
+	.body{
+		@include fullInParent;
+		padding: 10px;
+		height: 100vh;
+	}
 </style>

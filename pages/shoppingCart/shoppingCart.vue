@@ -1,17 +1,24 @@
 <template>
-	<navBar paddingLeft="20px">
-		<template #default>
+	<bodyer
+		:paddingLeft="`20px`"
+		:refresherEnabled="true"
+		:backgroundColor="`white`"
+		:refresherBackground="`white`"
+		:refresherRefreshTime="3000"
+	>
+		<template #navBar>
 			<div>购物车</div>
 		</template>
-	</navBar>
+		
+		<template #default>
+			
+		</template>
+	</bodyer>
 </template>
 
 
 <script lang="ts" setup>
-	import navBar from "@/components/common/navBar.vue"
-	import useGlobal from "@/api/global"
-	const global = useGlobal();
-	//console.log(global);
+	import bodyer from "@/components/common/bodyer.vue"
 </script>
 
 <style lang="scss" scoped>

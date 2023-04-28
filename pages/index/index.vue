@@ -1,8 +1,15 @@
 <template>
-	<bodyer>
+	<bodyer
+		:paddingLeft="`20px`"
+		:refresherEnabled="true"
+		:backgroundColor="`white`"
+		:refresherBackground="`white`"
+		:refresherRefreshTime="3000"
+	>
 		<template #navBar>
 			<div>JOJO佐希照明</div>
 		</template>
+		
 		<template #default>
 			<searchBar></searchBar>
 		</template>
@@ -10,8 +17,8 @@
 </template>
 
 <script lang="ts" setup>
-	import bodyer from "@/components/common/bodyer.vue"
 	import useGlobal from "@/api/global"
+	import bodyer from "@/components/common/bodyer.vue"
 	import searchBar from "@/components/index/searchBar.vue"
 	const global:object|undefined = useGlobal();
 

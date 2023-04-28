@@ -3,7 +3,6 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"enablePullDownRefresh": true
 			}
 		},
 		{
@@ -14,13 +13,11 @@
 		{
 			"path": "pages/shoppingCart/shoppingCart",
 			"style": {
-				"enablePullDownRefresh": true
 			}
 		},
 		{
 			"path": "pages/my/my",
 			"style": {
-				"enablePullDownRefresh": true
 			}
 		}
 	],

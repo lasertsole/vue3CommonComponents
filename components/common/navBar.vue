@@ -1,13 +1,16 @@
 <template>
+<!--#ifdef MP-WEIXIN-->
 	<view class="navBar">
 		<slot name="default"></slot>
 	</view>
 	<view class="navBarPlaceholder">
 		<slot></slot>
 	</view>
+<!--#endif-->
 </template>
 
 <script lang="ts" setup>
+// #ifdef MP-WEIXIN
 	import { ref, defineProps, computed, defineExpose } from "vue";
 	const props = defineProps({
 		paddingTop:{type: String, default: "0px", required: false},
@@ -51,9 +54,11 @@
 		navTotalHeight,//导出navBar导航栏总高度
 	});
 	/****************以上是样式导出****************/
+// #endif
 </script>
 
 <style lang="scss" scoped>
+/*#ifdef MP-WEIXIN*/
 	.navBar,.navBarPlaceholder{
 		box-sizing: border-box;
 		background-color: v-bind(backgroundColor);
@@ -82,4 +87,5 @@
 		display: block;
 		pointer-events:none;
 	}
+/*#endif*/
 </style>

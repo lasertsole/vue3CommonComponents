@@ -28,7 +28,10 @@
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
+		$locationFragmentWidth: 131px;
+		$searchFragmentWidth: calc(100% - $locationFragmentWidth - 5%);
 		.locationFragment{
+			width: $locationFragmentWidth;
 			display: flex;
 			.location{
 				@include fixedSquare($searchBarHeight - 2px);
@@ -45,11 +48,11 @@
 		}
 		.searchFragment{
 			display: flex;
+			width: $searchFragmentWidth;
 			.search{
-				width: 100px;
 				height: $searchBarHeight;
 				border: 1px #999 solid;
-				@include fixedCapsule(150px, 25px);
+				@include fixedCapsule(100%, 25px);
 				padding: 0px 10px;
 				font-size: 12px;
 			}	

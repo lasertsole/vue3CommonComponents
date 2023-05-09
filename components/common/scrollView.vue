@@ -11,7 +11,7 @@
 		@refresherrestore="onRestore"
 		@refresherabort="onAbort">
 		
-		<view class="container">
+		<view class="slotContainer">
 			<slot name="default"></slot>
 		</view>
 		
@@ -19,7 +19,7 @@
 </template>
 
 <script lang="ts" setup>
-	import {ref, defineProps, onMounted, getCurrentInstance} from "vue"
+	import {ref, defineProps, onMounted} from "vue"
 	
 	const props = defineProps({
 		refresherEnabled:{type:Boolean, required: false, default:false},
@@ -73,7 +73,7 @@
 		height: 100%;
 	}
 	
-	.container{
+	.slotContainer{
 		padding: v-bind(paddingContent);
 	}
 </style>

@@ -1,4 +1,7 @@
 <template>
+<!--#ifdef APP-PLUS-->
+	<view class="leaveStatusBar"></view>
+<!--#endif-->
 <!--#ifdef MP-WEIXIN-->
 	<view class="navBar">
 		<slot name="default"></slot>
@@ -11,7 +14,7 @@
 
 <script lang="ts" setup>
 // #ifdef MP-WEIXIN
-	import { ref, defineProps, computed, defineExpose } from "vue";
+	import { ref, defineProps, computed } from "vue";
 	const props = defineProps({
 		paddingTop:{type: String, default: "0px", required: false},
 		paddingRight:{type: String, default: "0px", required: false},
@@ -43,21 +46,17 @@
 	const paddingTotalTop = computed(()=>{//计算出padding-top
 		return parseInt(navBarMarginTop.value) + parseInt(props.paddingTop) + "px";
 	})
-	
-	const navTotalHeight = computed(()=>{//计算出导航栏总高度
-		return parseInt(paddingTotalTop.value) + parseInt(navBarHeight.value) +"px";
-	})
 	/****************以上是样式计算****************/
-	
-	/****************以下是样式导出****************/
-	defineExpose({
-		navTotalHeight,//导出navBar导航栏总高度
-	});
-	/****************以上是样式导出****************/
 // #endif
 </script>
 
 <style lang="scss" scoped>
+/*#ifdef APP-PLUS*/
+	.leaveStatusBar{
+		height: var(--status-bar-height);
+	}
+/*#endif*/
+
 /*#ifdef MP-WEIXIN*/
 	.navBar,.navBarPlaceholder{
 		box-sizing: border-box;
@@ -65,10 +64,6 @@
 		color: v-bind(textColor);
 		$paddingTotalTop: v-bind(paddingTotalTop);
 		padding-top: $paddingTotalTop;
-		$navBarMarginRight: v-bind(navBarMarginRight);
-		padding-right: calc(100% - $navBarMarginRight);
-		padding-bottom: v-bind(paddingBottom);
-		padding-left: v-bind(paddingLeft);
 		$navHeight: v-bind(navBarHeight);
 		min-height: calc($navHeight + $paddingTotalTop);
 		max-height: v-bind(navBarHeight);
@@ -81,11 +76,18 @@
 		width: 100%;
 		justify-content: flex-start;
 		align-items: center;
+		z-index: 1;
+		$navBarMarginRight: v-bind(navBarMarginRight);
+		padding-right: calc(100% - $navBarMarginRight);
+		padding-bottom: v-bind(paddingBottom);
+		padding-left: v-bind(paddingLeft);
 	}
 	.navBarPlaceholder{
 		opacity: 0;
 		display: block;
 		pointer-events:none;
+		position: relative;
+		z-index: 0;
 	}
 /*#endif*/
 </style>

@@ -1,4 +1,11 @@
 @use "sass:math";
+/* 初始化所有元素 */
+@mixin initEveryStyle{
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+	box-sizing: border-box;
+}
 /* 固定宽度 */
 @mixin fixedWidth($size) {
 	min-width: $size;
@@ -32,6 +39,13 @@
 /* 固定圆形 */
 @mixin fixedCircle($size){
 	@include fixedRoundedRectangle($size,$size,50%);
+}
+/* 固定圆形图片 */
+@mixin fixedCircleImg($size, $imgSrc) {
+	@include fixedCircle($size);
+	background-image: url(#{$imgSrc});
+	background-size: 100%;
+	background-position: center;
 }
 /* 固定充满父容器 */
 @mixin fullInParent {
